@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asteroid Impact Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <aside class="control-panel panel">
+      <h1>Asteroid Impact</h1>
+      <p>
+        Tune entry parameters and run an atmospheric impact simulation with
+        live visual feedback.
+      </p>
+
+      <div class="input-group">
+        <label for="size">Asteroid Size (km)</label>
+        <input type="number" id="size" value="10" min="1" max="100">
+      </div>
+
+      <div class="input-group">
+        <label for="velocity">Velocity (km/s)</label>
+        <input type="number" id="velocity" value="25" min="1" max="100">
+      </div>
+
+      <div class="input-group">
+        <label for="angle">Impact Angle: <span id="angleValue">45°</span></label>
+        <input type="range" id="angle" min="10" max="90" value="45">
+      </div>
+
+      <div class="input-group">
+        <label for="surface">Planet Surface</label>
+        <select id="surface">
+          <option value="Ocean">Ocean</option>
+          <option value="Desert">Desert</option>
+          <option value="Forest">Forest</option>
+          <option value="City">City</option>
+          <option value="Ice">Ice</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button class="start-btn" id="startBtn">Start</button>
+        <button class="pause-btn" id="pauseBtn">Pause</button>
+        <button class="reset-btn" id="resetBtn">Reset</button>
+      </div>
+    </aside>
+
+    <section class="simulation-area panel">
+      <canvas id="simulationCanvas" width="840" height="440"></canvas>
+
+      <section class="stats panel-inner">
+        <h2>Simulation Data</h2>
+        <p><strong>Size:</strong> <span id="stat-size">10 km</span></p>
+        <p><strong>Velocity:</strong> <span id="stat-velocity">25 km/s</span></p>
+        <p><strong>Angle:</strong> <span id="stat-angle">45°</span></p>
+        <p><strong>Surface:</strong> <span id="stat-surface">Ocean</span></p>
+        <p><strong>Energy:</strong> <span id="stat-energy">0 Mt TNT</span></p>
+        <p><strong>Status:</strong> <span id="status">Waiting...</span></p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
